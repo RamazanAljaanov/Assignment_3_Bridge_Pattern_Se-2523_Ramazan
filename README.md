@@ -9,8 +9,8 @@ Course: ShP-2216 Software Design Patterns, Astana IT University, 2026-2027
 | Name | Ramazan Alzhanov |
 | Group | SE-2523 |
 | Topic | C (Reports) |
-| Repository | https://github.com/YOUR_LOGIN/YOUR_REPO |
-| Base commit hash | `PASTE_FULL_40_CHARACTER_BASE_HASH_HERE` |
+| Repository |  |
+| Base commit hash | `3fa4c18332f157e901447030d53f38f7eb7751d2` |
 
 ## Idea
 
