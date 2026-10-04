@@ -9,7 +9,7 @@ Course: ShP-2216 Software Design Patterns, Astana IT University, 2026-2027
 | Name | Ramazan Alzhanov |
 | Group | SE-2523 |
 | Topic | C (Reports) |
-| Repository |  |
+| Repository | https://github.com/RamazanAljaanov/Assignment_3_Bridge_Pattern_Se-2523_Ramazan |
 | Base commit hash | `3fa4c18332f157e901447030d53f38f7eb7751d2` |
 
 ## Idea
