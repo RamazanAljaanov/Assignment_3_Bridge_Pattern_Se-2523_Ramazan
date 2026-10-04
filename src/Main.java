@@ -2,6 +2,7 @@ import Reports.AttendanceReport;
 import Reports.Formatter;
 import Reports.GradeReport;
 import Reports.HtmlFormatter;
+import Reports.MarkdownFormatter;
 import Reports.Report;
 import Reports.TextFormatter;
 
@@ -15,12 +16,16 @@ public class Main {
             "<article id=\"attendance-1\"><p>"
                     + "Attendance: 3/4 attended (75%)"
                     + "</p></article>";
+    private static final String EXPECTED_ATTENDANCE_MARKDOWN =
+            "**attendance-1**: Attendance: 3/4 attended (75%)";
     private static final String EXPECTED_GRADES_TEXT =
             "TEXT | grades-1 | Grades: [70, 80, 90]; average=80";
     private static final String EXPECTED_GRADES_HTML =
             "<article id=\"grades-1\"><p>"
                     + "Grades: [70, 80, 90]; average=80"
                     + "</p></article>";
+    private static final String EXPECTED_GRADES_MARKDOWN =
+            "**grades-1**: Grades: [70, 80, 90]; average=80";
 
     private static int passedChecks;
     private static int totalChecks;
@@ -69,6 +74,21 @@ public class Main {
                 EXPECTED_GRADES_HTML);
 
         runRuntimeSwitchCheck();
+
+        check(
+                "T6",
+                "AttendanceReport + MarkdownFormatter",
+                new AttendanceReport(
+                        "attendance-1", 3, 4, new MarkdownFormatter()).execute(),
+                EXPECTED_ATTENDANCE_MARKDOWN);
+
+        check(
+                "T7",
+                "GradeReport + MarkdownFormatter",
+                new GradeReport(
+                        "grades-1", new int[] {70, 80, 90},
+                        new MarkdownFormatter()).execute(),
+                EXPECTED_GRADES_MARKDOWN);
 
         System.out.println(
                 "SUMMARY: " + passedChecks + "/" + totalChecks + " PASS");
